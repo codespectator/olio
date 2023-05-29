@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+1. Docker
 
-* Ruby version
+To get up and running with this project it is required that you have Docker
+installed. For local use and easy installation check out [docker desktop](https://www.docker.com/products/docker-desktop/).
 
-* System dependencies
+2. Ruby
 
-* Configuration
+We are using the latest release at time of writing (3.2.2) this can be installed
+using your favourite version manager of choice (asdf, rbenv etc)
 
-* Database creation
+## Quick start
 
-* Database initialization
+1. Close this repository to your local machine:
 
-* How to run the test suite
+```
+$ git clone git@github.com:codespectator/olio.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Start the database using `docker compose`.
 
-* Deployment instructions
+```
+$ docker compose up -d
+```
 
-* ...
+3. Install required gems and setup database
+
+```
+$ cd olio
+$ bundle install
+$ bin/rails db:setup
+```
+
+4. Run the application
+
+```
+$ foreman start -f Procfile.dev
+```
+
+Now you can access the running application at [http://localhost:3000](http://localhost:3000)

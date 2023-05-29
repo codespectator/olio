@@ -150,6 +150,11 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
+    faraday (2.7.5)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
+    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -265,6 +270,7 @@ GEM
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
     spring (4.1.1)
@@ -284,6 +290,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
+    vcr (6.1.0)
     webmock (3.18.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -306,6 +313,8 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  faraday
+  foreman
   importmap-rails (~> 1.1.6)
   jbuilder (~> 2.11.5)
   pg (~> 1.5.3)
@@ -327,6 +336,7 @@ DEPENDENCIES
   sprockets-rails (~> 3.4.2)
   tailwindcss-rails (~> 2.0.29)
   tzinfo-data
+  vcr
   webmock
 
 RUBY VERSION
