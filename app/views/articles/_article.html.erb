@@ -1,4 +1,4 @@
 <li class="py-4">
   <p class="text-lg"><%= link_to article.title, "#", class: "text-blue-600 underline" %></p>
-  <p class="text-sm"><%= pluralize(0, "like") %> <%= link_to "Like", "#", class: "text-blue-600 underline" %></p>
+  <p class="text-sm"><%= pluralize(article.likes.count, "like") %> - <%= like_link_to current_user, article %></p>
 </li>

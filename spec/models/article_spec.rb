@@ -40,4 +40,18 @@ RSpec.describe Article do
       end
     end
   end
+
+  describe ".is_liked_by?" do
+    subject(:article) { build(:article) }
+    let(:current_user) { SecureRandom.uuid }
+
+    it "retruns false if article is unlinked" do
+      expect(article.is_liked_by?(current_user)).to be_falsey
+    end
+
+    it "retruns false if article is unlinked" do
+      Like.create article_id: article.id, user_id: current_user
+      expect(article.is_liked_by?(current_user)).to be_truthy
+    end
+  end
 end

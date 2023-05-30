@@ -3,6 +3,5 @@ class ApplicationController < ActionController::Base
     cookies[:user] ||= SecureRandom.uuid
     cookies[:user]
   end
-
-  helper :current_user
+  helper_method :current_user
 end

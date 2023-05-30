@@ -10,6 +10,18 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe ArticlesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe ArticlesHelper do
+  describe ".like_link_to" do
+    let(:current_user) { SecureRandom.uuid }
+    let(:article) { build(:article) }
+
+    it "returns a like link if not yet liked" do
+      expect(helper.like_link_to(current_user, article)).to eq("<a class=\"text-blue-600 underline\" href=\"/articles/1/like\">Like</a>")
+    end
+
+    it "returns an unlike link if liked" do
+      Like.create article_id: article.id, user_id: current_user
+      expect(helper.like_link_to(current_user, article)).to eq("<a class=\"text-blue-600 underline\" href=\"/articles/1/like\">Unlike</a>")
+    end
+  end
 end
