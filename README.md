@@ -17,26 +17,34 @@ using your favourite version manager of choice (asdf, rbenv etc)
 1. Close this repository to your local machine:
 
 ```
-$ git clone git@github.com:codespectator/olio.git
+ $ git clone git@github.com:codespectator/olio.git
 ```
 
 2. Start the database using `docker compose`.
 
 ```
-$ docker compose up -d
+ $ docker compose up -d
 ```
 
 3. Install required gems and setup database
 
 ```
-$ bundle install
-$ bin/rails db:setup
+ $ bundle install
+ $ bin/rails db:setup
 ```
 
 4. Run the application
 
 ```
-$ foreman start -f Procfile.dev
+ $ foreman start -f Procfile.dev
 ```
 
 Now you can access the running application at [http://localhost:3000](http://localhost:3000)
+
+## Testing
+
+The tests can be run using:
+
+```
+ $ bin/rspec
+```
