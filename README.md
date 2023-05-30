@@ -29,7 +29,6 @@ $ docker compose up -d
 3. Install required gems and setup database
 
 ```
-$ cd olio
 $ bundle install
 $ bin/rails db:setup
 ```
